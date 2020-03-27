@@ -42,7 +42,12 @@ layui.use(['jquery', 'element','layer','table','form','api'], function(){
            "data": res.data //解析数据列表
          };
      }
-       ,page: true
+     ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+      layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']//自定义分页布局 
+      //,limits:[5,10,15]
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
      });
    }()
  
